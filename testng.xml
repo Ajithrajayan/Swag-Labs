@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Suite">
+
+<listeners>
+<listener class-name="config.Listeners"/>
+</listeners>
+
+	<test thread-count="5" name="Login_With_Standard_User_TC" enabled="true" verbose="2">
+		<classes>
+			<class name="tests.LoginPageTest">
+				<methods>
+					<include name="login" />
+				</methods>
+			</class>
+			<class name="tests.InventoryPageTest">
+				<methods>
+					<include name="confirmInventoryPage" />
+					<include name="prodectSelection" />
+				</methods>
+			</class>
+		</classes>
+	</test>  
+	
+	<!-- Test -->
+	
+	<test name="Login_With_Locked_User_TC" enabled="true" verbose="2">
+		<classes>
+			<class name="tests.LoginPageTest">
+				<methods>
+					<include name="loginWithLockedOutUser" />
+				</methods>
+			</class>
+		</classes>
+	</test> 
+	
+	<!--Test-->
+	
+	<test name="Login_with_Problem_User_TC" enabled="true" verbose="2">
+		<classes>
+			<class name="tests.LoginPageTest">
+				<methods>
+					<include name="loginWithProblemUser" />
+				</methods>
+			</class>
+			<class name="tests.InventoryPageTest">
+				<methods>
+					<include name="confirmInventoryPage" />
+					<include name="prodectSelection" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<!--Test-->
+	
+	<test name="Login_with_Glitch_User_TC" enabled="true" verbose="2">
+		<classes>
+			<class name="tests.LoginPageTest">
+				<methods>
+					<include name="loginWithGlitchUser" />
+				</methods>
+			</class>
+			<class name="tests.InventoryPageTest">
+				<methods>
+					<include name="confirmInventoryPage" />
+					<include name="prodectSelection" />
+				</methods>
+			</class>
+		</classes>
+	</test>
+	
+	<!--Test-->
+	
+</suite> <!-- Suite -->
